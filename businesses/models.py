@@ -7,7 +7,7 @@ class Business(models.Model):
 		("OWNER", "Owner"),
 		("CLIENT", "Client"),
 		("SUPPLIER", "Supplier"),
-		("SHIPPING", "Shipping")
+		("SHIPPING", "Shipping"),
 	]
 
 	name = models.CharField(max_length=255)
@@ -40,7 +40,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 	TIER_CHOICES = [
 		("ADMIN", "Admin"),
 		("MANAGER", "Manager"),
-		("STAFF", "Staff")
+		("STAFF", "Staff"),
 	]
 
 	email = models.EmailField(unique=True)

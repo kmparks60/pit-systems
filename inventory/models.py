@@ -4,21 +4,21 @@ from businesses.models import Business
 
 class Location(models.Model):
 	AISLE_CHOICES = [
-		('A1', 'Aisle 1'),
-		('A2', 'Aisle 2'),
-		('A3', 'Aisle 3')
+		("A1", "Aisle 1"),
+		("A2", "Aisle 2"),
+		("A3", "Aisle 3"),
 	]
 
 	SHELF_CHOICES = [
-		('S1', 'Shelf 1'),
-		('S2', 'Shelf 2'),
-		('S3', 'Shelf 3')
+		("S1", "Shelf 1"),
+		("S2", "Shelf 2"),
+		("S3", "Shelf 3"),
 	]
 
 	BAY_CHOICES = [
-		('B1', 'Bay 1'),
-		('B2', 'Bay 2'),
-		('B3', 'Bay 3')
+		("B1", "Bay 1"),
+		("B2", "Bay 2"),
+		("B3", "Bay 3"),
 	]
 
 	business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='locations')
@@ -34,10 +34,10 @@ class Location(models.Model):
 
 class Unit(models.Model):
 	UNIT_TYPE_CHOICES = [
-        ('perishable', 'Perishable'),
-        ('non_perishable', 'Non-Perishable'),
-        ('hazardous', 'Hazardous'),
-		('non-hazardous', 'Non-Hazardous')
+        ("perishable", "Perishable"),
+        ("non_perishable", "Non-Perishable"),
+        ("hazardous", "Hazardous"),
+		("non-hazardous", "Non-Hazardous"),
     ]
 
 	business = models.ForeignKey(Business, on_delete=models.CASCADE, related_name='units')
