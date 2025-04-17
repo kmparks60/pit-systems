@@ -10,12 +10,19 @@ class Business(models.Model):
 		("SHIPPING", "Shipping"),
 	]
 
+	TIER_CHOICES = [
+		("BASE", "Base"),
+		("SILVER", "Silver"),
+		("GOLD", "Gold"),
+	]
+
 	name = models.CharField(max_length=255)
 	address = models.TextField(blank=True)
 	shippping_address = models.TextField(blank=True)
 	phone_number = models.CharField(max_length=20, blank=True)
 	email = models.EmailField(blank=True)
 	category = models.CharField(max_length=20, choices=BUSINESS_TYPES)
+	tier = models.CharField(max_length=10, choices=TIER_CHOICES, null=True, default="BASE")
 	created_at = models.DateTimeField(auto_now_add=True)
 
 	def __str__(self):
